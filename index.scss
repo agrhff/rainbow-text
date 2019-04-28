@@ -1,0 +1,71 @@
+// colors
+$color-red: #fd1d1d;
+$color-orange: #fcb045;
+$color-yellow: #fcef45;
+$color-green: #81fc45;
+$color-blue: #45d8fc;
+$color-indigo: #5245fc;
+$color-violet: #af45fc;
+
+$color-black: #000000;
+
+// mixins & animation
+@mixin crossBrowserPrefix($property, $css) {
+	#{$property}: #{$css};
+	-webkit-#{$property}: #{$css};
+	-moz-#{$property}: #{$css};
+	-ms-#{$property}: #{$css};
+	-o-#{$property}: #{$css};
+}
+
+@mixin rainbow() {
+	background-image: linear-gradient(
+		to right,
+		$color-red,
+		$color-orange,
+		$color-yellow,
+		$color-green,
+		$color-blue,
+		$color-indigo, 
+		$color-violet
+	);
+	background-size: 200% 200%;
+}
+
+@keyframes magic {
+	from {
+		background-position: 0 0;
+	}
+	to {
+		background-position: 100% 100%;
+	}
+}
+
+// reset indents
+* {
+	margin: 0;
+	padding: 0;
+}
+
+// it's time to magic!
+.wrapper {
+	width: 100vw;
+	height: 100vh;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+  
+	background-color: $color-black;
+}
+
+.text {
+	font-size: 4em;
+	font-weight: bold;
+	font-family: arial;
+	color: transparent;
+  
+	@include rainbow;
+	@include crossBrowserPrefix(animation, magic 3s infinite linear alternate);
+	@include crossBrowserPrefix(background-clip, text);
+}

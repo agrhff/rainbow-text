@@ -1,0 +1,35 @@
+@keyframes magic {
+  from {
+    background-position: 0 0; }
+  to {
+    background-position: 100% 100%; } }
+
+* {
+  margin: 0;
+  padding: 0; }
+
+.wrapper {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #000000; }
+
+.text {
+  font-size: 4em;
+  font-weight: bold;
+  font-family: arial;
+  color: transparent;
+  background-image: linear-gradient(to right, #fd1d1d, #fcb045, #fcef45, #81fc45, #45d8fc, #5245fc, #af45fc);
+  background-size: 200% 200%;
+  animation: magic 3s infinite linear alternate;
+  -webkit-animation: magic 3s infinite linear alternate;
+  -moz-animation: magic 3s infinite linear alternate;
+  -ms-animation: magic 3s infinite linear alternate;
+  -o-animation: magic 3s infinite linear alternate;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -ms-background-clip: text;
+  -o-background-clip: text; }
